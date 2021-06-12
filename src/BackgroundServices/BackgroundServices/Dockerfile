@@ -1,5 +1,5 @@
 #docker build -t background-services:1.0 . 
-#docker container run --name background-jobs-server -p 5000:80 background-services:1.0
+#docker container run -it --name background-jobs-server background-services:1.0
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS base
 WORKDIR /app
