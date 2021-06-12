@@ -10,21 +10,17 @@ namespace BackgroundServices
 {
     public class Program
     {
-        private static ApplicationSettings _settings;
-        private static IContainer _injector;
-        private static IScheduler _scheduler;
-
         private static async Task Main(string[] args)
         {
             Console.WriteLine("Starting background services");
 
             // Read appsettings.json and prepare dependency injector
-            _settings = ReadSettings();
-            _injector = DependencyResolver.BuildDependencyResolver(_settings);
+            var _settings = ReadSettings();
+            var _injector = DependencyResolver.BuildDependencyResolver(_settings);
 
             // Get Quartz job scheduler ready
             StdSchedulerFactory factory = new StdSchedulerFactory();
-            _scheduler = await factory.GetScheduler();
+            var _scheduler = await factory.GetScheduler();
             await _scheduler.Start();
 
             // Launch job(s)
