@@ -1,4 +1,4 @@
-# generic-console-application-as-a-service
+# console-app-with-autofac-and-quartz 
 Template for processes to run in background based on a cron schedule
 
 ## Add a new scheduled job
